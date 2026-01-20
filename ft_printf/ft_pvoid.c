@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_pvoid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/20 18:56:19 by macerver         ###   ########.fr       */
+/*   Created: 2025/12/04 16:52:18 by macerver          #+#    #+#             */
+/*   Updated: 2026/01/18 18:43:42 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int main(int argc, char **argv)
+int	ft_pvoid(void *p)
 {
-	if (argc > 1)
-	{
-		ft_printf("Bien %d", ft_atoi(argv[1]));
-	}
-	else
-		ft_printf("Error");
-	return 0;
+	unsigned long long	ptr;
+
+	ptr = (unsigned long) p;
+	if (!p)
+		return (write(1, "(nil)", 5));
+	return (printf_putstr("0x") + hex_nlower(ptr));
 }

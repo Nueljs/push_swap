@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/20 18:56:19 by macerver         ###   ########.fr       */
+/*   Created: 2025/11/28 12:20:30 by macerver          #+#    #+#             */
+/*   Updated: 2026/01/18 18:43:34 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <unistd.h>
 
-int main(int argc, char **argv)
-{
-	if (argc > 1)
-	{
-		ft_printf("Bien %d", ft_atoi(argv[1]));
-	}
-	else
-		ft_printf("Error");
-	return 0;
-}
+int		ft_printf(const char *str, ...);
+int		printf_putchar(char c);
+int		printf_putstr(char *s);
+int		printf_putnbr(int n, int fd);
+int		ft_putunbr(unsigned long n, int fd);
+int		ft_pvoid(void *p);
+int		hex_nupper(unsigned long n);
+int		hex_nlower(unsigned long n);
+
+#endif

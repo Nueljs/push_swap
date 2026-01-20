@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   hex_nlower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/20 18:56:19 by macerver         ###   ########.fr       */
+/*   Created: 2025/12/05 05:54:04 by macerver          #+#    #+#             */
+/*   Updated: 2025/12/08 12:21:59 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-int main(int argc, char **argv)
+int	hex_nlower(unsigned long n)
 {
-	if (argc > 1)
-	{
-		ft_printf("Bien %d", ft_atoi(argv[1]));
-	}
-	else
-		ft_printf("Error");
-	return 0;
+	char			c;
+	char			*hex;
+	static int		len;
+
+	hex = "0123456789abcdef";
+	len = 0;
+	if (n >= 16)
+		hex_nlower(n / 16);
+	c = hex[n % 16];
+	write(1, &c, 1);
+	return (++len);
 }

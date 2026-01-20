@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/20 18:56:19 by macerver         ###   ########.fr       */
+/*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
+/*   Updated: 2026/01/20 18:54:57 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+#  define PUSH SWAP_H
 
-int main(int argc, char **argv)
+#include <unistd.h>
+
+typedef struct s_list
 {
-	if (argc > 1)
-	{
-		ft_printf("Bien %d", ft_atoi(argv[1]));
-	}
-	else
-		ft_printf("Error");
-	return 0;
-}
+	void			*content;
+	struct s_list	*next;
+} t_list;
+
+int	ft_printf(const char *str, ...);
+int	ft_atoi(const char *nptr);
+
+#endif
