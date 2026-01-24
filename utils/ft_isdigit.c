@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:40:15 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/22 05:59:49 by macerver         ###   ########.fr       */
+/*   Updated: 2026/01/24 13:53:35 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isdigit(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= 48 && str[i] <= 57) && !('-' || '+'))
+		if (!(str[i] >= 48 && str[i] <= 57) && !('-') && !('+'))
 			return (0);
 		i++;
 	}
