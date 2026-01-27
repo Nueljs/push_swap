@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/25 21:22:59 by macerver         ###   ########.fr       */
+/*   Updated: 2026/01/27 06:38:01 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,24 @@ int	parse_argv(char **value, t_list **nums)
 	}
 	return (1);
 }
+int	check_doubles(t_list **nums)
+{
+	int		aux;
+	t_list	*list_aux;
+	
+	list_aux = *nums;
+	while((*nums) != NULL)
+	{
+		aux	= (*nums) -> value;
+		list_aux = (*nums) -> next;
+		while (((*nums) != NULL) && (aux != (*nums) -> value))
+			(*nums) = (*nums) -> next;
+		if (())
+		if (aux == (*nums) -> value)
+			return (1);
+	}
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
@@ -58,21 +76,23 @@ int	main(int argc, char **argv)
 	{
 		if(!parse_argv(argv, &nums))
 			return (ft_printf("Error\n"));
+		if (check_doubles(&nums))
+			return (ft_printf("Error\n"));
 	}
 	else
 		ft_printf("Error\n");
-	//now i have to add the check_doubles funtion
+	
+	if (!nums)
+		ft_printf("Error\n");
+	else
+	{
+		while (nums -> next != NULL)
+		{
+			ft_printf("%d\n", nums -> value);
+			nums = nums -> next;
+			if (nums -> next == NULL)
+				ft_printf("%d\n", nums -> value);
+		}
+	}
 	return (0);
 }
-	// if (!nums)
-	// 	ft_printf("Error\n");
-	// else
-	// {
-	// 	while (nums -> next != NULL)
-	// 	{
-	// 		ft_printf("%d\n", nums -> value);
-	// 		nums = nums -> next;
-	// 		if (nums -> next == NULL)
-	// 			ft_printf("%d\n", nums -> value);
-	// 	}
-	// }
