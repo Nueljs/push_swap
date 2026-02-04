@@ -6,18 +6,18 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/29 06:25:35 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:26:13 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	fill_list(t_list **nums, char *value)
+static void	fill_list(t_list **stack_a, char *value)
 {
-	if (*nums == NULL)
-		*nums = ft_lstnew(ft_atoi(value));
+	if (*stack_a == NULL)
+		*stack_a = ft_lstnew(ft_atoi(value));
 	else
-		ft_lstadd_back(nums, ft_lstnew(ft_atoi(value)));
+		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(value)));
 }
 static void	free_split(char	**arg)
 {
@@ -28,7 +28,7 @@ static void	free_split(char	**arg)
 	free(arg);
 }
 
-static int	split_argv(char *values, t_list **nums)
+static int	split_argv(char *values, t_list **stack_a)
 {
 	char	**arg;
 	int		j;
@@ -40,7 +40,7 @@ static int	split_argv(char *values, t_list **nums)
 	while (arg[++j])
 	{
 		if (ft_isnumber(arg[j]))
-			fill_list(nums, arg[j]);
+			fill_list(stack_a, arg[j]);
 		else
 			return (0);
 	}
@@ -48,7 +48,7 @@ static int	split_argv(char *values, t_list **nums)
 	return (1);
 }
 
-static int	parse_argv(char **value, t_list **nums)
+static int	parse_argv(char **value, t_list **stack_a)
 {
 	int		i;
 	int		splt;
@@ -58,12 +58,12 @@ static int	parse_argv(char **value, t_list **nums)
 	{
 		if (ft_strchr(value[i], ' '))
 		{
-			splt = split_argv(value[i], nums);
+			splt = split_argv(value[i], stack_a);
 			if (!splt)
 				return (0);
 		}
 		else if (ft_isnumber(value[i]))
-			fill_list(nums, value[i]);
+			fill_list(stack_a, value[i]);
 		else
 			return (0);
 	}
@@ -72,26 +72,27 @@ static int	parse_argv(char **value, t_list **nums)
 
 int	main(int argc, char **argv)
 {
-	t_list	*nums;
+	t_list	*stack_a;
 
-	nums = NULL;
+	stack_a = NULL;
 	if (argc > 1)
 	{
-		if(!parse_argv(argv, &nums))
+		if(!parse_argv(argv, &stack_a))
 			return (ft_printf("Error\n"));
-		if (check_doubles(nums))
+		if (check_doubles(stack_a))
 			return (ft_printf("Error\n"));
 	}
 	else
 		ft_printf("Error\n");
-	if (nums == NULL)
+	sa(&stack_a);
+	if (stack_a == NULL)
 		ft_printf("Error\n");
 	else
 	{
-		while (nums != NULL)
+		while (stack_a != NULL)
 		{
-			ft_printf("%d\n", nums -> value);
-			nums = nums -> next;
+			ft_printf("%d\n", stack_a -> value);
+			stack_a = stack_a -> next;
 		}
 	}
 	return (0);
