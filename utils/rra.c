@@ -5,8 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 13:49:43 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/04 13:49:44 by macerver         ###   ########.fr       */
+/*   Created: 2026/02/04 13:49:38 by macerver          #+#    #+#             */
+/*   Updated: 2026/02/05 12:04:57 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	rra(t_list **stack_a)
+{
+	rrotate(stack_a);
+	ft_printf("rra\n");
+}

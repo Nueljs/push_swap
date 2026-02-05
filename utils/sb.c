@@ -6,13 +6,13 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 13:49:51 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/04 19:27:17 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/05 11:36:37 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_list **stack_b)
+void	sb(t_list **stack_b)
 {
 	swap(stack_b);
 	ft_printf("sb\n");

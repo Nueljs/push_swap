@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/04 19:57:57 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/05 12:06:01 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ typedef struct s_list
 	struct s_list	*next;
 } t_list;
 
+///////
 //UTILS
+///////
+
 int		ft_printf(const char *str, ...);
 int		ft_atoi(const char *nptr);
 char	**ft_split(char const *s, char c);
@@ -33,6 +36,7 @@ char	*ft_strdup(const char *s);
 int		ft_strlen(const char *str);
 
 //UTILS LIST
+
 t_list	*ft_lstnew(int value);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -40,7 +44,10 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 //PARSE ARGUMENTS
 int		check_doubles(t_list *nums);
 
+//////////////
 //INSTRUCTIONS
+//////////////
+
 //SWAP
 void	swap(t_list **stack);
 void	sa(t_list **stack_a);
@@ -52,6 +59,10 @@ void	pb(t_list **stack_b, t_list **stack_a);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	push(t_list **from, t_list **to);
 
-
+//REVERSE ROTATE
+void	rrotate(t_list **stack);
+void	rrb(t_list **stack_b);
+void	rra(t_list **stack_a);
+void	rrr(t_list **stack_a, t_list **stack_b);
 
 #endif
