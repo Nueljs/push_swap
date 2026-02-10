@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/06 06:03:32 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/10 12:12:46 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ int		ft_isnumber(char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
 int		ft_strlen(const char *str);
+int		check_doubles(t_list *nums);
 
 //UTILS LIST
 
 t_list	*ft_lstnew(int value);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 
-//PARSE ARGUMENTS
-int		check_doubles(t_list *nums);
 
 //////////////
 //INSTRUCTIONS

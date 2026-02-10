@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sb.c                                               :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 13:49:51 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/05 11:36:37 by macerver         ###   ########.fr       */
+/*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
+/*   Updated: 2026/02/10 11:41:38 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sb(t_list **stack_b)
+void	algorithm(t_list **stack_a, t_list **stack_b)
 {
-	swap(stack_b);
-	ft_printf("sb\n");
+	if ()
 }

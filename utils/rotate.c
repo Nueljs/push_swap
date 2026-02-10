@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 05:40:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/06 05:58:53 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:57:22 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,22 @@ void	rotate(t_list **stack)
 	aux = aux -> next;
 	*stack = (*stack) -> next;
 	aux -> next = NULL;
+}
+
+void	ra(t_list **stack_a)
+{
+	rotate(stack_a);
+	ft_printf("ra\n");
+}
+
+void	rb(t_list **stack_b)
+{
+	rotate(stack_b);
+	ft_printf("rb\n");
+}
+void	rr(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_printf("rr\n");
 }

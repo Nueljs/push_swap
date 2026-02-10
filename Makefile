@@ -6,7 +6,7 @@
 #    By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 18:35:31 by macerver          #+#    #+#              #
-#    Updated: 2026/02/06 06:00:14 by macerver         ###   ########.fr        #
+#    Updated: 2026/02/10 12:27:07 by macerver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,7 @@ FT_PRINTF_SRC = ft_printf/ft_printf.c ft_printf/ft_putunbr.c ft_printf/ft_pvoid.
 	ft_printf/hex_nlower.c ft_printf/hex_nupper.c ft_printf/printf_putchar.c \
 	ft_printf/printf_putnbr.c ft_printf/printf_putstr.c
 
-UTILS_SRC = utils/ft_atoi.c utils/ft_strchr.c utils/ft_split.c utils/ft_lstadd_back.c \
-	utils/ft_lstnew.c utils/ft_isnumber.c utils/ft_substr.c utils/ft_strlen.c utils/ft_strdup.c\
-	utils/check_doubles.c utils/swap.c utils/sa.c utils/sb.c utils/ss.c utils/ft_lstadd_front.c\
-	utils/rrotate.c utils/rra.c utils/rrb.c utils/rrr.c utils/pb.c utils/pa.c utils/push.c utils/rotate.c\
-	utils/ra.c utils/rb.c utils/rr.c
-
+UTILS_SRC = utils/ft_split.c utils/utils.c utils/utils2.c utils/swap.c utils/rrotate.c utils/push.c utils/rotate.c\
 
 SRC += $(FT_PRINTF_SRC)
 SRC += $(UTILS_SRC)

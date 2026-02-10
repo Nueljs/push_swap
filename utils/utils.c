@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:55:48 by macerver          #+#    #+#             */
-/*   Updated: 2026/01/22 05:54:15 by macerver         ###   ########.fr       */
+/*   Created: 2026/02/10 12:10:29 by macerver          #+#    #+#             */
+/*   Updated: 2026/02/10 12:23:59 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -38,10 +48,58 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (dest);
 }
 
-// int	main(void)
-// {
-// 	char *s = ft_substr("", 1, 1);
-// 	printf("%s", s);
-// 	free (s);
-// 	return 0;
-// }
+char	*ft_strdup(const char *s)
+{
+	int		len;
+	int		i;
+	char	*s_copy;
+
+	len = ft_strlen(s);
+	i = 0;
+	s_copy = (char *)malloc((len + 1) * sizeof(char));
+	if (!s_copy)
+		return (NULL);
+	while (i < len)
+	{
+		s_copy[i] = s[i];
+		i++;
+	}
+	s_copy[i] = '\0';
+	return (s_copy);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char) c)
+			return ((char *) &s[i]);
+		i++;
+	}
+	if (s[i] == (char) c)
+		return ((char *) &s[i]);
+	return (NULL);
+}
+
+int	ft_isnumber(char *str)
+{
+	int	i;
+
+	i = 0;
+	if(!str)
+		return (0);
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if(str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (!(str[i] >= 48 && str[i] <= 57))
+			return (0);
+		i++;
+	}
+	return (1);
+}
