@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/05 12:06:01 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/06 06:03:32 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,11 @@ void	rrotate(t_list **stack);
 void	rrb(t_list **stack_b);
 void	rra(t_list **stack_a);
 void	rrr(t_list **stack_a, t_list **stack_b);
+
+//ROTATE
+void	rotate(t_list **stack);
+void	rb(t_list **stack_b);
+void	ra(t_list **stack_a);
+void	rr(t_list **stack_a, t_list **stack_b);
 
 #endif
