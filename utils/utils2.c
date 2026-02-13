@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:25:29 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/10 12:26:28 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/13 17:22:11 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,28 @@ int	check_doubles(t_list *nums)
 			return (1);
 	}
 	return (0);
+}
+
+void	sort_3(t_list **stack)
+{
+	t_list	*aux;
+
+	if (ft_lstsize((*stack)) == 2)
+	{
+		aux = (*stack)-> next;
+		if(aux -> value < (*stack) -> value)
+			sa(stack);
+	}
+	else
+	{
+		aux = (*stack) -> next;
+		while(aux != NULL)
+		{
+			if(aux -> value < (*stack) -> value)
+				sa(stack);
+			aux = aux ->  next;
+			if (aux -> value < (*stack) -> value)
+				ra(stack);
+		}
+	}
 }

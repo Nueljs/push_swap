@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/06 05:52:53 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/13 17:29:05 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_printf("Error\n");
-	// rra(&stack_a);
-	// pb(&stack_b, &stack_a);
-	// rrr(&stack_a, &stack_b);
-	rotate(&stack_a);
+	algorithm(&stack_a);
 	if (stack_a == NULL)
 		ft_printf("Error\n");
 	else
