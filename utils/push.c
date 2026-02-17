@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 19:35:55 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/10 11:55:48 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/16 01:01:52 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	push(t_list **from, t_list **to)
 	*to = tmp;
 }
 
-void	pb(t_list **stack_b, t_list **stack_a)
+void	pb(t_list **stack_b, t_list **stack_a) //Take the first element at the top of a and put it at the top of b
 {
 	push(stack_a, stack_b);
 	ft_printf("pb\n");
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b)//Take the first element at the top of b and put it at the top of a
 {
 	push(stack_b, stack_a);
 	ft_printf("pa\n");

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	swap(t_list **stack)
+void	swap(t_list **stack)//Swap the first 2 elements at the top of the stack
 {
 	t_list	*node2;
 	t_list	*node3;

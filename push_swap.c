@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/13 17:29:05 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/16 01:25:13 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ static int	parse_argv(char **value, t_list **stack_a)
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
-	// t_list	*stack_b;
+	t_list	*stack_b;
 
 	stack_a = NULL;
-	// stack_b = NULL;
+	stack_b = NULL;
 	if (argc > 1)
 	{
 		if(!parse_argv(argv, &stack_a))
@@ -86,15 +86,16 @@ int	main(int argc, char **argv)
 	}
 	else
 		ft_printf("Error\n");
-	algorithm(&stack_a);
-	if (stack_a == NULL)
+	ft_printf("a\n");
+	algorithm(&stack_a, &stack_b);
+	if (stack_b == NULL)
 		ft_printf("Error\n");
 	else
 	{
-		while (stack_a != NULL)
+		while (stack_b != NULL)
 		{
-			ft_printf("%d\n", stack_a -> value);
-			stack_a = stack_a -> next;
+			ft_printf("%d\n", stack_b -> value);
+			stack_b = stack_b -> next;
 		}
 	}
 	return (0);

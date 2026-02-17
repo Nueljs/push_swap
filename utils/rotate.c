@@ -6,23 +6,24 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 05:40:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/10 11:57:22 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/16 01:02:28 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_list **stack)
+void	rotate(t_list **stack)//The first element becomes the last one
 {
-	t_list *aux;
+	t_list	*aux;
+	t_list	*aux2;
 
-	aux = *stack;
-	while (aux -> next != NULL)
-		aux = aux -> next;
-	aux -> next = *stack;
-	aux = aux -> next;
-	*stack = (*stack) -> next;
-	aux -> next = NULL;
+	aux = (*stack) -> next;
+	aux2 = aux -> next;
+	while (aux2 -> next != NULL)
+		aux2 = aux2 -> next;
+	aux2 -> next = *stack;
+	(*stack) -> next = NULL;
+	*stack = aux;
 }
 
 void	ra(t_list **stack_a)

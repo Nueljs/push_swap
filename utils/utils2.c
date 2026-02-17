@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:25:29 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/13 17:22:11 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/15 18:42:31 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,27 +63,41 @@ int	check_doubles(t_list *nums)
 	}
 	return (0);
 }
+void	sort_2(t_list **stack)
+{
+	t_list *aux;
+	
+	aux = (*stack)-> next;
+	if(aux -> value < (*stack) -> value)
+		sa(stack);
+}
 
 void	sort_3(t_list **stack)
 {
 	t_list	*aux;
+	t_list	*aux2;
 
-	if (ft_lstsize((*stack)) == 2)
+	aux = (*stack) -> next;
+	aux2 = aux -> next;
+	if (((*stack) -> value > aux -> value) && ((*stack) -> value > aux2 -> value))
 	{
-		aux = (*stack)-> next;
-		if(aux -> value < (*stack) -> value)
-			sa(stack);
-	}
-	else
-	{
-		aux = (*stack) -> next;
-		while(aux != NULL)
+		if (aux -> value < aux2 -> value)
+			ra(stack);
+		else
 		{
-			if(aux -> value < (*stack) -> value)
-				sa(stack);
-			aux = aux ->  next;
-			if (aux -> value < (*stack) -> value)
-				ra(stack);
+			ra(stack);
+			sa(stack);
 		}
+		aux = (*stack) -> next;
+		aux2 = aux -> next;
 	}
+	if (aux -> value > aux2 -> value)
+	{
+		rra(stack);
+		aux = (*stack) -> next;
+		aux2 = aux -> next;
+	}
+	if ((*stack) -> value > aux -> value)
+		sa(stack);
 }
+
