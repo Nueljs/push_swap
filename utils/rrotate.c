@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 11:07:40 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/16 01:03:02 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/18 12:15:54 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rrotate(t_list **stack)//The last element become the first one
 
 	aux = *stack;
 	while (aux -> next != NULL)
-	{	
+	{
 		prev = aux;
 		aux = aux -> next;
 		if (aux -> next == NULL)

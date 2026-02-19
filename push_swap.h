@@ -6,21 +6,23 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/16 01:05:32 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/18 12:44:50 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#  define PUSH SWAP_H
+# define PUSH SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
 	int				value;
+	int				cost;
+	struct s_list	*target;
 	struct s_list	*next;
-} t_list;
+}	t_list;
 
 ///////
 //UTILS
@@ -45,7 +47,6 @@ t_list	*ft_lstnew(int value);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
-
 
 //////////////
 //INSTRUCTIONS

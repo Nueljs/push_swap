@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/16 01:25:13 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:29:59 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ static void	fill_list(t_list **stack_a, char *value)
 	else
 		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(value)));
 }
+
 static void	free_split(char	**arg)
 {
 	int	i;
+
 	i = 0;
 	while (arg[i])
 		free(arg[i++]);
@@ -52,7 +54,7 @@ static int	parse_argv(char **value, t_list **stack_a)
 {
 	int		i;
 	int		splt;
-	
+
 	i = 0;
 	while (value[++i])
 	{
@@ -79,7 +81,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc > 1)
 	{
-		if(!parse_argv(argv, &stack_a))
+		if (!parse_argv(argv, &stack_a))
 			return (ft_printf("Error\n"));
 		if (check_doubles(stack_a))
 			return (ft_printf("Error\n"));
@@ -88,14 +90,14 @@ int	main(int argc, char **argv)
 		ft_printf("Error\n");
 	ft_printf("a\n");
 	algorithm(&stack_a, &stack_b);
-	if (stack_b == NULL)
+	if (stack_a == NULL)
 		ft_printf("Error\n");
 	else
 	{
-		while (stack_b != NULL)
+		while (stack_a != NULL)
 		{
-			ft_printf("%d\n", stack_b -> value);
-			stack_b = stack_b -> next;
+			ft_printf("%d\n", stack_a -> value);
+			stack_a = stack_a -> next;
 		}
 	}
 	return (0);
