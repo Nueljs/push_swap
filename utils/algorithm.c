@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/20 06:08:13 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/20 17:54:50 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	calc_target(t_list *node, t_list **stack)
 
 static void	calc_cost(t_list **stack_a, t_list **stack_b)
 {
-	// while ((*stack_a))
-	// {
-	// }
-	calc_target(*stack_a, stack_b);
+	while ((*stack_a))
+	{
+		calc_target(*stack_a, stack_b);
+	}
 }
 
 void	algorithm(t_list **stack_a, t_list **stack_b)
