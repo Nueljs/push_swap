@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/18 12:44:50 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/21 17:36:29 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_list
 {
 	int				value;
 	int				cost;
+	int				index;
 	struct s_list	*target;
 	struct s_list	*next;
 }	t_list;

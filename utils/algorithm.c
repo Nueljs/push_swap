@@ -6,13 +6,59 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/20 17:54:50 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/21 18:25:52 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	calc_target(t_list *node, t_list **stack)
+
+static void	calc_index(t_list **stack)
+{
+	t_list	*aux;
+	int		i;
+	
+	i = 1;
+	aux = (*stack);
+	while(aux)
+	{
+		aux -> index = i;
+		ft_printf("%d\n", aux -> index);
+		i++;
+		aux = aux -> next;
+	}
+}
+
+static void	cost(t_list **stack, t_list **target_stack)
+{
+	int	cost;
+	t_list	*target;
+	t_list	*aux;
+	
+	aux = (*stack);
+	cost = 1;
+	target = aux -> target;
+	if (aux -> index > ft_lstsize(target_stack)/2)
+	{
+		if (target -> index > ft_lstsize(target_stack)/2)
+		{
+			
+		}
+		cost = cost + 1 + (ft_lstsize(target_stack) - aux -> index);
+	}
+	else if (aux -> index < ft_lstsize(target_stack)/2)
+		cost = cost + aux -> index - 1;
+	if (target -> index > ft_lstsize(target_stack)/2)
+	{
+		
+	}
+	if (target -> index < ft_lstsize(target_stack)/2)
+	{
+
+	}
+}
+
+static void	calc_target(t_list *node, t_list **stack)
 {
 	int		target;
 	t_list	*aux;
@@ -38,7 +84,17 @@ static void	calc_cost(t_list **stack_a, t_list **stack_b)
 	while ((*stack_a))
 	{
 		calc_target(*stack_a, stack_b);
+		(*stack_a) = (*stack_a) -> next;
 	}
+	calc_index(stack_a);
+	calc_index(stack_b);
+	while ((*stack_a))
+	{
+		cost(stack_a, stack_b);
+		(*stack_a) = (*stack_a) -> next;
+	}
+	
+	
 }
 
 void	algorithm(t_list **stack_a, t_list **stack_b)
