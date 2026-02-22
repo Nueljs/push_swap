@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 05:22:20 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/22 06:36:47 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/22 17:07:02 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int	rr_cost(int index_stack, int size_stack, int index_t, int size_t)
 
 int	r_cost(int i_node, int i_target)
 {
-	int	cost;
-
-	cost = 0;
 	if(i_node > i_target)
 		return (i_node - 1);
 	return (i_target - 1);

@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/22 06:33:05 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/22 17:40:21 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	calc_index(t_list **stack)
 	while (aux)
 	{
 		aux -> index = i;
-		ft_printf("%d\n", aux -> index);
 		i++;
 		aux = aux -> next;
 	}
@@ -35,20 +34,22 @@ static void	cost(t_list *node, t_list **stack, t_list **target_stack)
 
 	cost = 1;
 	target = node -> target;
-	if (node -> index > ft_lstsize(stack) / 2)
+	if (node -> index > ft_lstsize((*stack)) / 2)
 	{
-		if (target -> index > ft_lstsize(target_stack) / 2)
-			cost += rr_cost(node -> index, ft_lstsize(stack),
-				target -> index, ft_lstsize(target_stack));
-		else if (target -> index <= ft_lstsize(target_stack) / 2)
-			cost += (ft_lstsize(stack) - node  -> index) + target -> index;
+		if (target -> index > ft_lstsize((*target_stack)) / 2)
+			cost += rr_cost(node -> index, ft_lstsize((*stack)),
+				target -> index, ft_lstsize((*target_stack)));
+		else if (target -> index <= ft_lstsize((*target_stack)) / 2)
+			cost += (ft_lstsize((*stack)) - node  -> index) + target -> index;
 	}
-	else if (node  -> index <= ft_lstsize(target_stack) / 2)
+	else if (node -> index <= ft_lstsize((*stack)) / 2)
 	{
-		if (target -> index <= ft_lstsize(target_stack) / 2)
+		if (target -> index <= ft_lstsize((*target_stack)) / 2)
 			cost += r_cost(node -> index, target -> index);
-		cost += node -> index - 1;
+		else
+			cost += node -> index + (ft_lstsize((*target_stack)) - target -> index);
 	}
+	node -> cost = cost;
 }
 
 static void	calc_target(t_list *node, t_list **stack)
@@ -79,7 +80,7 @@ static void	calc_cost(t_list **stack_a, t_list **stack_b)
 	aux = (*stack_a);
 	while (aux)
 	{
-		calc_target(*stack_a, stack_b);
+		calc_target(aux, stack_b);
 		aux = aux -> next;
 	}
 	aux = (*stack_a);
@@ -90,8 +91,6 @@ static void	calc_cost(t_list **stack_a, t_list **stack_b)
 		cost(aux, stack_a, stack_b);
 		aux = aux -> next;
 	}
-	
-	
 }
 
 void	algorithm(t_list **stack_a, t_list **stack_b)
