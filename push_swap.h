@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/21 17:36:29 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/22 06:34:34 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ int		check_doubles(t_list *nums);
 void	sort_3(t_list **stack);
 void	sort_2(t_list **stack);
 void	algorithm(t_list **stack_a, t_list **stack_b);
+
+//ALGORITHM UTILS
+int		rr_cost(int index_a, int size_a, int index_b, int size_b);
+int		r_cost(int i_node, int i_target);
 
 //UTILS LIST
 

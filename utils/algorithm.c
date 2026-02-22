@@ -6,21 +6,20 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/21 18:25:52 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/22 06:33:05 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
 static void	calc_index(t_list **stack)
 {
 	t_list	*aux;
 	int		i;
-	
+
 	i = 1;
 	aux = (*stack);
-	while(aux)
+	while (aux)
 	{
 		aux -> index = i;
 		ft_printf("%d\n", aux -> index);
@@ -29,32 +28,26 @@ static void	calc_index(t_list **stack)
 	}
 }
 
-static void	cost(t_list **stack, t_list **target_stack)
+static void	cost(t_list *node, t_list **stack, t_list **target_stack)
 {
-	int	cost;
+	int		cost;
 	t_list	*target;
-	t_list	*aux;
-	
-	aux = (*stack);
-	cost = 1;
-	target = aux -> target;
-	if (aux -> index > ft_lstsize(target_stack)/2)
-	{
-		if (target -> index > ft_lstsize(target_stack)/2)
-		{
-			
-		}
-		cost = cost + 1 + (ft_lstsize(target_stack) - aux -> index);
-	}
-	else if (aux -> index < ft_lstsize(target_stack)/2)
-		cost = cost + aux -> index - 1;
-	if (target -> index > ft_lstsize(target_stack)/2)
-	{
-		
-	}
-	if (target -> index < ft_lstsize(target_stack)/2)
-	{
 
+	cost = 1;
+	target = node -> target;
+	if (node -> index > ft_lstsize(stack) / 2)
+	{
+		if (target -> index > ft_lstsize(target_stack) / 2)
+			cost += rr_cost(node -> index, ft_lstsize(stack),
+				target -> index, ft_lstsize(target_stack));
+		else if (target -> index <= ft_lstsize(target_stack) / 2)
+			cost += (ft_lstsize(stack) - node  -> index) + target -> index;
+	}
+	else if (node  -> index <= ft_lstsize(target_stack) / 2)
+	{
+		if (target -> index <= ft_lstsize(target_stack) / 2)
+			cost += r_cost(node -> index, target -> index);
+		cost += node -> index - 1;
 	}
 }
 
@@ -81,17 +74,21 @@ static void	calc_target(t_list *node, t_list **stack)
 
 static void	calc_cost(t_list **stack_a, t_list **stack_b)
 {
-	while ((*stack_a))
+	t_list	*aux;
+
+	aux = (*stack_a);
+	while (aux)
 	{
 		calc_target(*stack_a, stack_b);
-		(*stack_a) = (*stack_a) -> next;
+		aux = aux -> next;
 	}
+	aux = (*stack_a);
 	calc_index(stack_a);
 	calc_index(stack_b);
-	while ((*stack_a))
+	while (aux)
 	{
-		cost(stack_a, stack_b);
-		(*stack_a) = (*stack_a) -> next;
+		cost(aux, stack_a, stack_b);
+		aux = aux -> next;
 	}
 	
 	
