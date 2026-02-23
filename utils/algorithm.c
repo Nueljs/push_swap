@@ -6,26 +6,11 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/22 17:40:21 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/23 05:36:24 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	calc_index(t_list **stack)
-{
-	t_list	*aux;
-	int		i;
-
-	i = 1;
-	aux = (*stack);
-	while (aux)
-	{
-		aux -> index = i;
-		i++;
-		aux = aux -> next;
-	}
-}
 
 static void	cost(t_list *node, t_list **stack, t_list **target_stack)
 {
@@ -103,6 +88,9 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 		while (ft_lstsize((*stack_a)) > 3 && i-- > 0)
 			pb(stack_b, stack_a);
 		calc_cost(stack_a, stack_b);
+		while (ft_lstsize((*stack_a)) > 3) 
+			push_to_b(stack_a, stack_b);
+		sort_3(stack_a);
 	}
 	else if (ft_lstsize((*stack_a)) == 2)
 		sort_2(stack_a);

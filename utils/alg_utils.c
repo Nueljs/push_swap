@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 05:22:20 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/22 17:07:02 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/23 05:55:04 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,37 @@ int	r_cost(int i_node, int i_target)
 	if(i_node > i_target)
 		return (i_node - 1);
 	return (i_target - 1);
+}
+
+void	calc_index(t_list **stack)
+{
+	t_list	*aux;
+	int		i;
+
+	i = 1;
+	aux = (*stack);
+	while (aux)
+	{
+		aux -> index = i;
+		i++;
+		aux = aux -> next;
+	}
+}
+
+void	push_to_b(t_list **from, t_list **to)
+{
+	t_list	*min_cost;
+	t_list	*aux;
+	int		moves;
+	
+	moves = 0;
+	aux = (*from);
+	min_cost = (*from);
+	while (aux)
+	{
+		if (aux -> cost < min_cost -> cost)
+			min_cost = aux;
+		aux = aux -> next;
+	}
+	if ()
 }

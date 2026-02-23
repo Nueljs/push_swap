@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/22 17:02:42 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/23 05:54:40 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	algorithm(t_list **stack_a, t_list **stack_b);
 //ALGORITHM UTILS
 int		rr_cost(int index_a, int size_a, int index_b, int size_b);
 int		r_cost(int i_node, int i_target);
+void	calc_index(t_list **stack);
+void	push_to_b(t_list **from, t_list **to);
 
 //UTILS LIST
 
