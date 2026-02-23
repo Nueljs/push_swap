@@ -43,14 +43,14 @@ int	check_doubles(t_list *nums)
 {
 	int		aux;
 	t_list	*list_aux;
-	
+
 	list_aux = nums;
-	while(nums != NULL)
+	while (nums != NULL)
 	{
-		aux  = nums -> value;
+		aux = nums -> value;
 		list_aux = nums -> next;
 		if (list_aux == NULL)
-			return 0;
+			return (0);
 		while ((list_aux != NULL) && (aux != list_aux -> value))
 			list_aux = list_aux -> next;
 		if (list_aux == NULL)
@@ -63,12 +63,13 @@ int	check_doubles(t_list *nums)
 	}
 	return (0);
 }
+
 void	sort_2(t_list **stack)
 {
-	t_list *aux;
-	
+	t_list	*aux;
+
 	aux = (*stack)-> next;
-	if(aux -> value < (*stack) -> value)
+	if (aux -> value < (*stack)-> value)
 		sa(stack);
 }
 
@@ -77,9 +78,9 @@ void	sort_3(t_list **stack)
 	t_list	*aux;
 	t_list	*aux2;
 
-	aux = (*stack) -> next;
+	aux = (*stack)-> next;
 	aux2 = aux -> next;
-	if (((*stack) -> value > aux -> value) && ((*stack) -> value > aux2 -> value))
+	if (((*stack)-> value > aux -> value) && ((*stack)-> value > aux2 -> value))
 	{
 		if (aux -> value < aux2 -> value)
 			ra(stack);
@@ -88,16 +89,15 @@ void	sort_3(t_list **stack)
 			ra(stack);
 			sa(stack);
 		}
-		aux = (*stack) -> next;
+		aux = (*stack)-> next;
 		aux2 = aux -> next;
 	}
 	if (aux -> value > aux2 -> value)
 	{
 		rra(stack);
-		aux = (*stack) -> next;
+		aux = (*stack)-> next;
 		aux2 = aux -> next;
 	}
-	if ((*stack) -> value > aux -> value)
+	if ((*stack)-> value > aux -> value)
 		sa(stack);
 }
-

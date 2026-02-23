@@ -6,13 +6,14 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/06 05:40:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/18 12:13:56 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/23 18:57:30 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_list **stack)//The first element becomes the last one
+//The first element becomes the last one
+void	rotate(t_list **stack)
 {
 	t_list	*aux;
 	t_list	*aux2;

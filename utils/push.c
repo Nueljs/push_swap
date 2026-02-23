@@ -22,13 +22,13 @@ void	push(t_list **from, t_list **to)
 	*to = tmp;
 }
 
-void	pb(t_list **stack_b, t_list **stack_a) //Take the first element at the top of a and put it at the top of b
+void	pb(t_list **stack_b, t_list **stack_a)
 {
 	push(stack_a, stack_b);
 	ft_printf("pb\n");
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)//Take the first element at the top of b and put it at the top of a
+void	pa(t_list **stack_a, t_list **stack_b)
 {
 	push(stack_b, stack_a);
 	ft_printf("pa\n");
