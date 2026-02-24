@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 05:22:20 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/24 05:50:10 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:14:26 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,9 @@ void	push_to_b(t_list **from, t_list **to)
 			min_cost = aux;
 		aux = aux -> next;
 	}
-	while (min_cost != (*from))
-	{
-		if (min_cost -> index > ft_lstsize(*from) / 2)
-			ejecute_rra(min_cost, from, to);
-		else
-			ejecute_ra(min_cost, from, to);
-	}
+	if (min_cost -> index > ft_lstsize(*from) / 2)
+		ejecute_rra(min_cost, from, to);
+	else
+		ejecute_ra(min_cost, from, to);
 	pb(to, from);
 }

@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/24 05:50:43 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/24 18:21:15 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 void	calc_target(t_list *node, t_list **stack)
 {
-	int		target;
+	t_list	*target;
 	t_list	*aux;
 	t_list	*max;
 
+	aux = (*stack);
 	max = (*stack);
-	target = (*stack)-> value;
-	aux = (*stack)-> next;
+	target = (*stack);
 	while (aux)
 	{
-		if ((aux -> value > node -> value) && (aux -> value > max -> value))
+		if ((node-> value > aux-> value) && (target-> value <= aux-> value))
+		{
+			target = aux;
+			node-> target = target;
+		}
+		if (aux-> value > max-> value)
 			max = aux;
-		if ((node -> value > aux -> value) && (aux -> value > target))
-			node -> target = aux;
-		aux = aux -> next;
+		aux = aux-> next;
 	}
-	if (node -> target == NULL)
+	if (!node-> target)
 		node -> target = max;
 }
 
@@ -42,13 +45,17 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 		i = 2;
 		while (ft_lstsize((*stack_a)) > 3 && i-- > 0)
 			pb(stack_b, stack_a);
-		calc_cost(stack_a, stack_b);
 		while (ft_lstsize((*stack_a)) > 3)
 		{
-			push_to_b(stack_a, stack_b);
 			calc_cost(stack_a, stack_b);
+			push_to_b(stack_a, stack_b);
 		}
 		sort_3(stack_a);
+		while (stack_b)
+		{
+			calc_cost(stack_b, stack_a);
+			push_to_b(stack_b, stack_a);
+		}
 	}
 	else if (ft_lstsize((*stack_a)) == 2)
 		sort_2(stack_a);
