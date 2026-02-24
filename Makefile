@@ -6,7 +6,7 @@
 #    By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 18:35:31 by macerver          #+#    #+#              #
-#    Updated: 2026/02/22 05:24:16 by macerver         ###   ########.fr        #
+#    Updated: 2026/02/24 04:55:30 by macerver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,15 @@ FT_PRINTF_SRC = ft_printf/ft_printf.c ft_printf/ft_putunbr.c ft_printf/ft_pvoid.
 	ft_printf/hex_nlower.c ft_printf/hex_nupper.c ft_printf/printf_putchar.c \
 	ft_printf/printf_putnbr.c ft_printf/printf_putstr.c
 
-UTILS_SRC = utils/ft_split.c utils/utils.c utils/utils2.c utils/swap.c utils/rrotate.c utils/push.c utils/rotate.c\
-	utils/lst_utils.c utils/algorithm.c utils/alg_utils.c
+UTILS_SRC = utils/ft_split.c utils/utils.c utils/utils2.c utils/lst_utils.c
+
+MOVES_SRC = moves/swap.c moves/rrotate.c moves/push.c moves/rotate.c
+
+ALGORITHM_SRC = algorithm/alg_utils.c algorithm/algorithm.c algorithm/cost.c algorithm/ejecute_moves.c
 
 SRC += $(FT_PRINTF_SRC)
+SRC += $(MOVES_SRC)
+SRC += $(ALGORITHM_SRC)
 SRC += $(UTILS_SRC)
 OBJ = $(SRC:.c=.o)
 

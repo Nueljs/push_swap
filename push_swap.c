@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/23 18:55:38 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/24 05:31:58 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,27 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("Error\n");
 	algorithm(&stack_a, &stack_b);
-	// if (stack_a == NULL)
-	// 	ft_printf("Error\n");
-	// else
-	// {
-	// 	while (stack_a != NULL)
-	// 	{
-	// 		ft_printf("%d\n", stack_a -> value);
-	// 		stack_a = stack_a -> next;
-	// 	}
-	// }
+	if (stack_a == NULL)
+		ft_printf("Error\n");
+	else
+	{
+		ft_printf("stack_a:\n");
+		while (stack_a != NULL)
+		{
+			ft_printf("%d\n", stack_a -> value);
+			stack_a = stack_a -> next;
+		}
+	}
+	if (stack_b == NULL)
+		ft_printf("Error\n");
+	else
+	{
+		ft_printf("stack_b:\n");
+		while (stack_b != NULL)
+		{
+			ft_printf("%d\n", stack_b -> value);
+			stack_b = stack_b -> next;
+		}
+	}
 	return (0);
 }

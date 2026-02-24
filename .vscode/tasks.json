@@ -26,7 +26,7 @@
 		{
 			"type": "shell",
 			"label": "build push_swap",
-			"command": "gcc -g -Wall -Werror -Wextra -I. -Ift_printf push_swap.c ft_printf/*.c utils/*.c -o push_swap",
+			"command": "gcc -g -Wall -Werror -Wextra -I. -Ift_printf push_swap.c ft_printf/*.c utils/*.c algorithm/*.c moves/*.c -o push_swap",
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},

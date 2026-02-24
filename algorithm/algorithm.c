@@ -6,39 +6,13 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/23 18:42:17 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/24 05:50:43 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	cost(t_list *node, t_list **stack, t_list **target_stack)
-{
-	int		cost;
-	t_list	*target;
-
-	cost = 1;
-	target = node -> target;
-	if (node -> index > ft_lstsize((*stack)) / 2)
-	{
-		if (target -> index > ft_lstsize((*target_stack)) / 2)
-			cost += rr_cost(node -> index, ft_lstsize((*stack)),
-					target -> index, ft_lstsize((*target_stack)));
-		else if (target -> index <= ft_lstsize((*target_stack)) / 2)
-			cost += (ft_lstsize((*stack)) - node -> index) + target -> index;
-	}
-	else if (node -> index <= ft_lstsize((*stack)) / 2)
-	{
-		if (target -> index <= ft_lstsize((*target_stack)) / 2)
-			cost += r_cost(node -> index, target -> index);
-		else
-			cost += node -> index
-				+ (ft_lstsize((*target_stack)) - target -> index);
-	}
-	node -> cost = cost;
-}
-
-static void	calc_target(t_list *node, t_list **stack)
+void	calc_target(t_list *node, t_list **stack)
 {
 	int		target;
 	t_list	*aux;
@@ -59,26 +33,6 @@ static void	calc_target(t_list *node, t_list **stack)
 		node -> target = max;
 }
 
-static void	calc_cost(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*aux;
-
-	aux = (*stack_a);
-	while (aux)
-	{
-		calc_target(aux, stack_b);
-		aux = aux -> next;
-	}
-	aux = (*stack_a);
-	calc_index(stack_a);
-	calc_index(stack_b);
-	while (aux)
-	{
-		cost(aux, stack_a, stack_b);
-		aux = aux -> next;
-	}
-}
-
 void	algorithm(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
@@ -90,7 +44,10 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 			pb(stack_b, stack_a);
 		calc_cost(stack_a, stack_b);
 		while (ft_lstsize((*stack_a)) > 3)
+		{
 			push_to_b(stack_a, stack_b);
+			calc_cost(stack_a, stack_b);
+		}
 		sort_3(stack_a);
 	}
 	else if (ft_lstsize((*stack_a)) == 2)
