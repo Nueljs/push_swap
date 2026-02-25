@@ -6,7 +6,7 @@
 #    By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 18:35:31 by macerver          #+#    #+#              #
-#    Updated: 2026/02/24 04:55:30 by macerver         ###   ########.fr        #
+#    Updated: 2026/02/25 05:24:40 by macerver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ UTILS_SRC = utils/ft_split.c utils/utils.c utils/utils2.c utils/lst_utils.c
 
 MOVES_SRC = moves/swap.c moves/rrotate.c moves/push.c moves/rotate.c
 
-ALGORITHM_SRC = algorithm/alg_utils.c algorithm/algorithm.c algorithm/cost.c algorithm/ejecute_moves.c
+ALGORITHM_SRC = algorithm/alg_utils.c algorithm/algorithm.c algorithm/cost.c algorithm/ejecute_moves.c\
+	algorithm/b_to_a.c
 
 SRC += $(FT_PRINTF_SRC)
 SRC += $(MOVES_SRC)

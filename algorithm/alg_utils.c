@@ -6,11 +6,23 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 05:22:20 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/24 18:14:26 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/25 05:21:37 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	reset_target(t_list **stack)
+{
+	t_list	*aux;
+
+	aux = (*stack);
+	while (aux)
+	{
+		aux-> target = NULL;
+		aux = aux-> next;
+	}
+}
 
 void	calc_index(t_list **stack)
 {
@@ -46,3 +58,4 @@ void	push_to_b(t_list **from, t_list **to)
 		ejecute_ra(min_cost, from, to);
 	pb(to, from);
 }
+

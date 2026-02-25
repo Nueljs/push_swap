@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/24 05:24:59 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/25 05:51:21 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,12 @@ void	sort_2(t_list **stack);
 void	algorithm(t_list **stack_a, t_list **stack_b);
 void	calc_index(t_list **stack);
 void	push_to_b(t_list **from, t_list **to);
-void	calc_cost(t_list **stack_a, t_list **stack_b);
-void	calc_target(t_list *node, t_list **stack);
+void	calc_cost_atob(t_list **stack_a, t_list **stack_b);
+void	calc_target_b(t_list *node, t_list **stack);
 void	ejecute_rra(t_list *node, t_list **from, t_list **to);
 void	ejecute_ra(t_list *node, t_list **from, t_list **to);
+void	reset_target(t_list **stack);
+void	b_to_a(t_list **from, t_list **to);
 
 //UTILS LIST
 
