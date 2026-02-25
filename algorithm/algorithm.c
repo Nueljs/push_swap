@@ -6,11 +6,37 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/25 05:55:26 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/25 19:20:46 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void put_min_ontop(t_list **stack)
+{
+	t_list *min;
+	t_list	*aux;
+
+	aux = (*stack);
+	min = (*stack);
+	while (aux)
+	{
+		if (min-> value > aux-> value)
+			min	= aux;
+		aux = aux-> next;
+	}
+	calc_index(stack);
+	if (min-> index > ft_lstsize((*stack)) / 2)
+	{
+		while ((*stack) != min)
+			rra(stack);
+	}
+	else
+	{
+		while ((*stack) != min)
+			ra(stack);
+	}
+}
 
 void	calc_target_b(t_list *node, t_list **stack)
 {
@@ -53,6 +79,7 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 		sort_3(stack_a);
 		reset_target(stack_b);
 		b_to_a(stack_b, stack_a);
+		put_min_ontop(stack_a);
 	}
 	else if (ft_lstsize((*stack_a)) == 2)
 		sort_2(stack_a);
