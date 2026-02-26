@@ -6,12 +6,12 @@
 #    By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 18:35:31 by macerver          #+#    #+#              #
-#    Updated: 2026/02/25 05:24:40 by macerver         ###   ########.fr        #
+#    Updated: 2026/02/26 19:27:52 by macerver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME := push_swap.a
+NAME := push_swap
 CC := cc
 CFLAGS := -Wall -Werror -Wextra -I. -Ift_printf
 SRC = push_swap.c
@@ -31,14 +31,14 @@ SRC += $(FT_PRINTF_SRC)
 SRC += $(MOVES_SRC)
 SRC += $(ALGORITHM_SRC)
 SRC += $(UTILS_SRC)
+
 OBJ = $(SRC:.c=.o)
 
-AR := ar rcs
 RM := rm -f
 
 all: $(NAME)
 $(NAME): $(OBJ)
-	$(AR) $@ $^
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.c 
 	$(CC) $(CFLAGS) -c -o $@ $<
