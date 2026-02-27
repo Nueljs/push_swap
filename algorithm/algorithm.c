@@ -6,15 +6,15 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/25 19:20:46 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/27 13:36:46 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void put_min_ontop(t_list **stack)
+static void	put_min_ontop(t_list **stack)
 {
-	t_list *min;
+	t_list	*min;
 	t_list	*aux;
 
 	aux = (*stack);
@@ -22,7 +22,7 @@ static void put_min_ontop(t_list **stack)
 	while (aux)
 	{
 		if (min-> value > aux-> value)
-			min	= aux;
+			min = aux;
 		aux = aux-> next;
 	}
 	calc_index(stack);

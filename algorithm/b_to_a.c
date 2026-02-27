@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 05:23:31 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/25 19:09:56 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/27 13:13:14 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static t_list	*calc_min(t_list **stack)
 	}
 	return (min);
 }
+
 static void	calc_target_a(t_list *node, t_list **stack)
 {
 	t_list	*aux;
@@ -53,7 +54,7 @@ static void	calc_target_a(t_list *node, t_list **stack)
 	node-> target = target;
 }
 
-void b_to_a(t_list **from, t_list **to)
+void	b_to_a(t_list **from, t_list **to)
 {
 	t_list	*target;
 	t_list	*min;
@@ -61,7 +62,7 @@ void b_to_a(t_list **from, t_list **to)
 	while ((*from) != NULL)
 	{
 		calc_target_a((*from), to);
-		min	= calc_min(to);
+		min = calc_min(to);
 		target = (*from)-> target;
 		if (target-> value < (*from)-> value)
 			target = min;

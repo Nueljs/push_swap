@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:25:29 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/15 18:42:31 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/27 11:34:53 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,18 @@ void	sort_3(t_list **stack)
 	}
 	if ((*stack)-> value > aux -> value)
 		sa(stack);
+}
+
+void	free_stack(t_list *stack)
+{
+	t_list	*aux;
+
+	if (!stack)
+		return ;
+	while (stack)
+	{
+		aux = stack-> next;
+		free(stack);
+		stack = aux;
+	}
 }

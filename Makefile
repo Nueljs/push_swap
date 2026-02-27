@@ -6,7 +6,7 @@
 #    By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 18:35:31 by macerver          #+#    #+#              #
-#    Updated: 2026/02/26 19:27:52 by macerver         ###   ########.fr        #
+#    Updated: 2026/02/27 12:33:22 by macerver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ FT_PRINTF_SRC = ft_printf/ft_printf.c ft_printf/ft_putunbr.c ft_printf/ft_pvoid.
 	ft_printf/hex_nlower.c ft_printf/hex_nupper.c ft_printf/printf_putchar.c \
 	ft_printf/printf_putnbr.c ft_printf/printf_putstr.c
 
-UTILS_SRC = utils/ft_split.c utils/utils.c utils/utils2.c utils/lst_utils.c
+UTILS_SRC = utils/ft_split.c utils/utils.c utils/utils2.c utils/lst_utils.c utils/utils3.c
 
 MOVES_SRC = moves/swap.c moves/rrotate.c moves/push.c moves/rotate.c
 

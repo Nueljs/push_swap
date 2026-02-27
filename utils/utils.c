@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:10:29 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/18 12:15:42 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/27 12:36:06 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ char	*ft_strchr(const char *s, int c)
 
 int	ft_isnumber(char *str)
 {
-	int	i;
+	int		i;
+	long	n;
 
 	i = 0;
 	if (!str)
@@ -101,5 +102,8 @@ int	ft_isnumber(char *str)
 			return (0);
 		i++;
 	}
+	n = ft_atol(str);
+	if (n < -2147483648 || n > 2147483647)
+		return (0);
 	return (1);
 }

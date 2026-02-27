@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/26 05:21:59 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/27 12:21:03 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ static int	split_argv(char *values, t_list **stack_a)
 		if (ft_isnumber(arg[j]))
 			fill_list(stack_a, arg[j]);
 		else
+		{
+			free_split(arg);
 			return (0);
+		}
 	}
 	free_split(arg);
 	return (1);
@@ -62,7 +65,10 @@ static int	parse_argv(char **value, t_list **stack_a)
 		{
 			splt = split_argv(value[i], stack_a);
 			if (!splt)
+			{
+				free_stack((*stack_a));
 				return (0);
+			}
 		}
 		else if (ft_isnumber(value[i]))
 			fill_list(stack_a, value[i]);
@@ -79,39 +85,27 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc > 1)
-	{
-		if (!parse_argv(argv, &stack_a))
-			return (ft_printf("Error\n"));
-		if (check_doubles(stack_a))
-			return (ft_printf("Error\n"));
-	}
-	else
-		ft_printf("Error\n");
-	if (ft_lstsize(stack_a)== 1)
+	if (argc < 2)
 		return (0);
+	if (!parse_argv(argv, &stack_a) || check_doubles(stack_a))
+	{
+		ft_printf("Error\n");
+		free_stack(stack_a);
+		return (1);
+	}
 	algorithm(&stack_a, &stack_b);
-	// if (stack_a == NULL)
-	// 	ft_printf("Error\n");
-	// else
-	// {
-	// 	ft_printf("stack_a:\n");
-	// 	while (stack_a != NULL)
-	// 	{
-	// 		ft_printf("%d\n", stack_a -> value);
-	// 		stack_a = stack_a -> next;
-	// 	}
-	// }
-	// if (stack_b == NULL)
-	// 	ft_printf("Error\n");
-	// else
-	// {
-	// 	ft_printf("stack_b:\n");
-	// 	while (stack_b != NULL)
-	// 	{
-	// 		ft_printf("%d\n", stack_b -> value);
-	// 		stack_b = stack_b -> next;
-	// 	}
-	// }
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }
+// if (stack_a == NULL)
+// 	ft_printf("Error\n");
+// else
+// {
+// 	ft_printf("stack_a:\n");
+// 	while (stack_a != NULL)
+// 	{
+// 		ft_printf("%d\n", stack_a -> value);
+// 		stack_a = stack_a -> next;
+// 	}
+// }

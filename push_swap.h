@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/25 05:51:21 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/27 12:33:47 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int		ft_strlen(const char *str);
 int		check_doubles(t_list *nums);
 void	sort_3(t_list **stack);
 void	sort_2(t_list **stack);
+void	free_stack(t_list *stack);
+long	ft_atol(const char *nptr);
 
 //ALGORITHM
 void	algorithm(t_list **stack_a, t_list **stack_b);
