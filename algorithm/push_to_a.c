@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b_to_a.c                                           :+:      :+:    :+:   */
+/*   push_to_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 05:23:31 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/27 13:13:14 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/28 10:52:48 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	calc_target_a(t_list *node, t_list **stack)
 	node-> target = target;
 }
 
-void	b_to_a(t_list **from, t_list **to)
+void	push_to_a(t_list **from, t_list **to)
 {
 	t_list	*target;
 	t_list	*min;

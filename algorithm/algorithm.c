@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:40:44 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/27 13:36:46 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/28 10:52:26 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 		}
 		sort_3(stack_a);
 		reset_target(stack_b);
-		b_to_a(stack_b, stack_a);
+		push_to_a(stack_b, stack_a);
 		put_min_ontop(stack_a);
 	}
 	else if (ft_lstsize((*stack_a)) == 2)

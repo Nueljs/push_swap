@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/27 12:33:47 by macerver         ###   ########.fr       */
+/*   Updated: 2026/02/28 10:52:42 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	calc_target_b(t_list *node, t_list **stack);
 void	ejecute_rra(t_list *node, t_list **from, t_list **to);
 void	ejecute_ra(t_list *node, t_list **from, t_list **to);
 void	reset_target(t_list **stack);
-void	b_to_a(t_list **from, t_list **to);
+void	push_to_a(t_list **from, t_list **to);
 
 //UTILS LIST
 
