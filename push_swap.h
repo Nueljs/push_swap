@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:55:42 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/28 10:52:42 by macerver         ###   ########.fr       */
+/*   Updated: 2026/03/03 02:35:11 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	sort_3(t_list **stack);
 void	sort_2(t_list **stack);
 void	free_stack(t_list *stack);
 long	ft_atol(const char *nptr);
+int		is_sort(t_list *stack);
 
 //ALGORITHM
 void	algorithm(t_list **stack_a, t_list **stack_b);

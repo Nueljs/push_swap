@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:50:09 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/22 17:01:58 by macerver         ###   ########.fr       */
+/*   Updated: 2026/03/03 02:29:19 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,17 @@ int	ft_lstsize(t_list *lst)
 
 t_list	*ft_lstnew(int value)
 {
-	t_list	*nodo;
+	t_list	*node;
 
-	nodo = malloc(sizeof(t_list));
-	if (!nodo)
+	node = malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	nodo -> value = value;
-	nodo -> next = NULL;
-	return (nodo);
+	node -> value = value;
+	node -> next = NULL;
+	node -> cost = 0;
+	node -> index = 0;
+	node -> target = NULL;
+	return (node);
 }
 
 void	ft_lstadd_back(t_list **lst, t_list *new)

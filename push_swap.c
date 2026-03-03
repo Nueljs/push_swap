@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/27 12:21:03 by macerver         ###   ########.fr       */
+/*   Updated: 2026/03/03 02:36:40 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,18 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc < 2)
+	if (argc <= 2)
 		return (0);
 	if (!parse_argv(argv, &stack_a) || check_doubles(stack_a))
 	{
 		ft_printf("Error\n");
 		free_stack(stack_a);
 		return (1);
+	}
+	if (is_sort(stack_a))
+	{
+		free_stack(stack_a);
+		return (0);
 	}
 	algorithm(&stack_a, &stack_b);
 	free_stack(stack_a);

@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:31:53 by macerver          #+#    #+#             */
-/*   Updated: 2026/02/27 12:33:35 by macerver         ###   ########.fr       */
+/*   Updated: 2026/03/03 02:34:41 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,18 @@ long	ft_atol(const char *nptr)
 		i++;
 	}
 	return (result * sign);
+}
+
+int	is_sort(t_list *stack)
+{
+	t_list *aux;
+	
+	while (stack->next != NULL)
+	{
+		aux = stack->next;
+		if (stack->value > aux->value)
+			return (0);
+		stack = stack ->next;
+	}
+	return (1);
 }

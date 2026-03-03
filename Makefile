@@ -6,14 +6,14 @@
 #    By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 18:35:31 by macerver          #+#    #+#              #
-#    Updated: 2026/02/28 10:52:35 by macerver         ###   ########.fr        #
+#    Updated: 2026/03/03 02:26:25 by macerver         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME := push_swap
 CC := cc
-CFLAGS := -Wall -Werror -Wextra -I. -Ift_printf
+CFLAGS := -Wall -Werror -Wextra -O0 -g -I. -Ift_printf
 SRC = push_swap.c
 
 FT_PRINTF_SRC = ft_printf/ft_printf.c ft_printf/ft_putunbr.c ft_printf/ft_pvoid.c \
