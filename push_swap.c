@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 17:13:24 by macerver          #+#    #+#             */
-/*   Updated: 2026/03/03 02:36:40 by macerver         ###   ########.fr       */
+/*   Updated: 2026/03/06 19:55:46 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static int	parse_argv(char **value, t_list **stack_a)
 			if (!splt)
 			{
 				free_stack((*stack_a));
+				*stack_a = NULL;
 				return (0);
 			}
 		}
@@ -75,6 +76,8 @@ static int	parse_argv(char **value, t_list **stack_a)
 		else
 			return (0);
 	}
+	if (*stack_a == NULL)
+		return (0);
 	return (1);
 }
 
@@ -85,7 +88,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc <= 2)
+	if (argc < 2)
 		return (0);
 	if (!parse_argv(argv, &stack_a) || check_doubles(stack_a))
 	{

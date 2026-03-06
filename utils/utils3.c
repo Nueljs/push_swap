@@ -6,7 +6,7 @@
 /*   By: macerver <macerver@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 12:31:53 by macerver          #+#    #+#             */
-/*   Updated: 2026/03/03 02:34:41 by macerver         ###   ########.fr       */
+/*   Updated: 2026/03/06 19:40:22 by macerver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ long	ft_atol(const char *nptr)
 
 int	is_sort(t_list *stack)
 {
-	t_list *aux;
-	
+	t_list	*aux;
+
+	if (!stack || !stack->next)
+		return (1);
 	while (stack->next != NULL)
 	{
 		aux = stack->next;
